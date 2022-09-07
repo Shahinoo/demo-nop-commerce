@@ -1,0 +1,41 @@
+package org.example.stepDefs;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * Hooks are blocks of code that can run at various points in the Cucumber execution cycle.
+ * They are typically used for setup and teardown of the environment before and after each scenario.
+ */
+public class Hooks {
+
+    public static WebDriver driver;
+
+    @Before
+    public static void OpenBrowser() {
+        //1. using chrome driver
+        WebDriverManager.chromedriver().setup();
+        //2. instantiate object from Chrome driver
+        driver = new ChromeDriver();
+        //3. configurations
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        //4. Navigation
+        driver.navigate().to("https://demo.nopcommerce.com/");
+    }
+
+    @After
+    public static void quitBrowser() throws InterruptedException {
+        Thread.sleep(4000);
+        driver.quit();
+    }
+}
+
+
