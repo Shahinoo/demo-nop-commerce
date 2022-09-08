@@ -13,7 +13,6 @@ public class HomePage {
     // Home page Functions
     public void clickOnRegistrationLink() {
         driver.findElement(registerLink).click();
-
     }
     
 }
