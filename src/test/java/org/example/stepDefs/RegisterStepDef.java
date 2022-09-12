@@ -1,7 +1,6 @@
 package org.example.stepDefs;
 
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,10 +15,12 @@ public class RegisterStepDef {
 
     HomePage homePage = new HomePage(driver);
     RegistrationPage registrationPage = new RegistrationPage(driver);
+    // for generating random email
+    String generatedString = RandomStringUtils.randomAlphabetic(8);
+    String randomEmail = generatedString + "@gmail.com";
 
     @Given("user go to register page")
     public void userGoToRegisterPage() {
-        System.out.println("Test before Start Coding");
         homePage.clickOnRegistrationLink();
     }
 
@@ -38,14 +39,14 @@ public class RegisterStepDef {
         registrationPage.selectBirthDate(dt.cell(1, 0), dt.cell(1, 1), dt.cell(1, 2));
     }
 
+
     @And("user enter email field")
     public void userEnterEmailField() {
-        String generatedString = RandomStringUtils.randomAlphabetic(8);
-        String email = generatedString + "@gmail.com";
+
         // verify
-        System.out.println(email);
+        System.out.println(randomEmail);
         // Enter email
-        registrationPage.enterEmail(email);
+        registrationPage.enterEmail(randomEmail);
     }
 
     @And("user fills Password fields {string} and {string}")
@@ -62,5 +63,11 @@ public class RegisterStepDef {
     public void successMessageIsDisplayed() {
         registrationPage.displaySuccessMessage();
 
+    }
+
+    @Given("User do registration")
+    public void userDoRegistration(DataTable dt) {
+        registrationPage.doRegister(dt.cell(1, 0), dt.cell(1, 1), randomEmail, dt.cell(1, 3), dt.cell(1, 4));
+        System.out.println(randomEmail);
     }
 }

@@ -44,9 +44,9 @@ public class RegistrationPage {
         driver.findElement(genderRadioButtonMale).click();
     }
 
-    public void enterFirstAndLastName(String FName, String LName) {
-        driver.findElement(firstNameTxtField).sendKeys(FName);
-        driver.findElement(lastNameTxtField).sendKeys(LName);
+    public void enterFirstAndLastName(String fName, String lName) {
+        driver.findElement(firstNameTxtField).sendKeys(fName);
+        driver.findElement(lastNameTxtField).sendKeys(lName);
     }
 
     public void selectBirthDate(String day, String month, String year) {
@@ -87,4 +87,20 @@ public class RegistrationPage {
         // Assert All
         soft.assertAll();
     }
+
+    public void doRegister(String fName, String lName, String email, String password, String confirmPassword) {
+
+        driver.findElement(firstNameTxtField).sendKeys(fName);
+        driver.findElement(lastNameTxtField).sendKeys(lName);
+        driver.findElement(emailTxtField).sendKeys(email);
+        driver.findElement(passwordTxtField).sendKeys(password);
+        driver.findElement(confirmPasswordTxtField).sendKeys(confirmPassword);
+        driver.findElement(registerBtn).click();
+
+    }
+
+    public void doLogout() {
+        driver.findElement(logOutLink).click();
+    }
+
 }

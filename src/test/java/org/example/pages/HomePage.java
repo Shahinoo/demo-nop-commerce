@@ -15,11 +15,19 @@ public class HomePage {
 
     // Home page Locators
     By registerLink = By.cssSelector(".ico-register");
+    By loginLink = By.linkText("Log in");
 
 
     // Home page Functions
     public void clickOnRegistrationLink() {
         driver.findElement(registerLink).click();
+    }
+
+    public void clickOnLoginLink() {
+        driver.findElement(loginLink).click();
+    }
+    public void getHomePageURL () {
+        driver.getCurrentUrl();
     }
 
 }
