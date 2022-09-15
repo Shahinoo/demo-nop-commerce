@@ -1,5 +1,6 @@
 package org.example.stepDefs;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -14,6 +15,8 @@ public class LoginStepDef {
     LoginPage loginPage = new LoginPage(driver);
     HomePage homePage = new HomePage(driver);
     RegistrationPage registrationPage = new RegistrationPage(driver);
+    RegisterStepDef registerStepDef = new RegisterStepDef();
+
 
     @Given("user go to login page")
     public void userGoToLoginPage() {
@@ -31,7 +34,18 @@ public class LoginStepDef {
     }
 
     @When("user login with valid email and {string}")
-    public void userLoginWithValidEmailAnd(String password) {
+    public void userLoginWithValidEmailAndPassword(String password) {
+        loginPage.enterLoginCredentials(registerStepDef.randomEmail, password);
+        System.out.println(registerStepDef.randomEmail);
+    }
+
+    @And("user press on login button")
+    public void userPressOnLoginButton() {
+        loginPage.clickOnLoginBtn();
+    }
+
+    @Then("user login to the system successfully")
+    public void userLoginToTheSystemSuccessfully() {
 
     }
 }

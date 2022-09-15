@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
 
     WebDriver driver;
+    RegistrationPage registrationPage = new RegistrationPage(driver);
 
     // Constructor
     public LoginPage(WebDriver driver) {
@@ -23,10 +24,22 @@ public class LoginPage {
      * Actions
      */
 
-    public void doLogin(String loginEmail, String loginPassword) {
+    public void doRegisterAndLogin(String fName, String lName, String email, String password, String confirmPassword) {
+        registrationPage.doRegister(fName, lName, email, password, confirmPassword);
+        registrationPage.doLogout();
+        enterLoginCredentials(email, password);
+        clickOnLoginBtn();
+    }
+
+    public void enterLoginCredentials(String loginEmail, String loginPassword) {
         driver.findElement(loginEmailTxtField).sendKeys(loginEmail);
         driver.findElement(loginPasswordTxtField).sendKeys(loginPassword);
-        driver.findElement(loginBtn).click();
     }
+
+    public void clickOnLoginBtn() {
+        driver.findElement(loginBtn).click();
+
+    }
+
 
 }

@@ -15,9 +15,21 @@ public class RegisterStepDef {
 
     HomePage homePage = new HomePage(driver);
     RegistrationPage registrationPage = new RegistrationPage(driver);
-    // for generating random email
-    String generatedString = RandomStringUtils.randomAlphabetic(8);
-    String randomEmail = generatedString + "@gmail.com";
+
+
+    String randomEmail = randomEmail();
+
+    public static String randomEmail() {
+        String generatedString = RandomStringUtils.randomAlphabetic(4);
+        String randomEmail = generatedString + "@gmail.com";
+        return randomEmail;
+    }
+
+
+
+//    public String getRandomEmail() {
+//        return randomEmail;
+//    }
 
     @Given("user go to register page")
     public void userGoToRegisterPage() {
@@ -39,15 +51,17 @@ public class RegisterStepDef {
         registrationPage.selectBirthDate(dt.cell(1, 0), dt.cell(1, 1), dt.cell(1, 2));
     }
 
-
     @And("user enter email field")
     public void userEnterEmailField() {
-
+        String generatedString = RandomStringUtils.randomAlphabetic(4);
+        String randomEmail = generatedString + "@gmail.com";
         // verify
         System.out.println(randomEmail);
         // Enter email
         registrationPage.enterEmail(randomEmail);
+        System.out.println(randomEmail);
     }
+
 
     @And("user fills Password fields {string} and {string}")
     public void userFillsPasswordFieldsAnd(String password, String confirmPassword) {
@@ -66,8 +80,34 @@ public class RegisterStepDef {
     }
 
     @Given("User do registration")
-    public void userDoRegistration(DataTable dt) {
+    public String userDoRegistration(DataTable dt) {
+//        String generatedString = RandomStringUtils.randomAlphabetic(4);
+//        String randomEmail = generatedString + "@gmail.com";
         registrationPage.doRegister(dt.cell(1, 0), dt.cell(1, 1), randomEmail, dt.cell(1, 3), dt.cell(1, 4));
         System.out.println(randomEmail);
+        String storeEmail = randomEmail;
+       return storeEmail;
+
+
+
     }
+
+//    public  void getDataTable (DataTable dt) {
+//        userDoRegistration()
+//
+//    }
+
+//    public void getValueOfRandomEmail (String email) {
+//        String value = String.valueOf(email);
+//        System.out.println(value);
+//    }
+
+//    public String getStoreEmail() {
+//        return storeEmail;
+//    }
+
+//    public String getRandomEmail() {
+//
+//        return randomEmail;
+//    }
 }

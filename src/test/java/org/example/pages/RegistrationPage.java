@@ -99,6 +99,13 @@ public class RegistrationPage {
 
     }
 
+
+
+    public void doRegister(String email) {
+        driver.findElement(emailTxtField).sendKeys(email);
+    }
+
+
     public void doLogout() {
         driver.findElement(logOutLink).click();
     }
