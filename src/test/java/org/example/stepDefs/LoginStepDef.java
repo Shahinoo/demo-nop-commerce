@@ -9,7 +9,6 @@ import org.example.pages.HomePage;
 import org.example.pages.LoginPage;
 import org.example.pages.RegistrationPage;
 import org.json.simple.parser.ParseException;
-import org.openqa.selenium.support.Color;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 
