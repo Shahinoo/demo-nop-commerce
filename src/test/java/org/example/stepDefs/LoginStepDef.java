@@ -4,10 +4,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.example.data.JsonDataReader;
 import org.example.pages.HomePage;
 import org.example.pages.LoginPage;
 import org.example.pages.RegistrationPage;
+import org.json.simple.parser.ParseException;
 import org.testng.Assert;
+
+import java.io.IOException;
 
 import static org.example.stepDefs.Hooks.driver;
 
@@ -16,6 +20,7 @@ public class LoginStepDef {
     HomePage homePage = new HomePage(driver);
     RegistrationPage registrationPage = new RegistrationPage(driver);
     RegisterStepDef registerStepDef = new RegisterStepDef();
+    JsonDataReader jsonReader = new JsonDataReader();
 
 
     @Given("user go to login page")
@@ -33,10 +38,14 @@ public class LoginStepDef {
         Assert.assertEquals(driver.getCurrentUrl(), "https://demo.nopcommerce.com/");
     }
 
-    @When("user login with valid email and {string}")
-    public void userLoginWithValidEmailAndPassword(String password) {
-        loginPage.enterLoginCredentials(registerStepDef.randomEmail, password);
-        System.out.println(registerStepDef.randomEmail);
+
+    @When("user login with valid email and password")
+    public void userLoginWithValidEmailAndPassword() throws IOException, ParseException {
+        //  System.out.println(registerStepDef.randomEmail);
+        jsonReader.JsonReader();
+        loginPage.enterLoginCredentials(jsonReader.email, jsonReader.password);
+
+
     }
 
     @And("user press on login button")

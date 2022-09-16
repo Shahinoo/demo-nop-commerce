@@ -6,8 +6,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.example.data.JsonDataReader;
 import org.example.pages.HomePage;
 import org.example.pages.RegistrationPage;
+import org.json.simple.parser.ParseException;
+
+import java.io.IOException;
 
 import static org.example.stepDefs.Hooks.driver;
 
@@ -15,9 +19,11 @@ public class RegisterStepDef {
 
     HomePage homePage = new HomePage(driver);
     RegistrationPage registrationPage = new RegistrationPage(driver);
+    JsonDataReader jsonReader = new JsonDataReader();
 
 
-    String randomEmail = randomEmail();
+//
+//    String randomEmail = randomEmail();
 
     public static String randomEmail() {
         String generatedString = RandomStringUtils.randomAlphabetic(4);
@@ -79,17 +85,20 @@ public class RegisterStepDef {
 
     }
 
-    @Given("User do registration")
-    public String userDoRegistration(DataTable dt) {
-//        String generatedString = RandomStringUtils.randomAlphabetic(4);
-//        String randomEmail = generatedString + "@gmail.com";
-        registrationPage.doRegister(dt.cell(1, 0), dt.cell(1, 1), randomEmail, dt.cell(1, 3), dt.cell(1, 4));
-        System.out.println(randomEmail);
-        String storeEmail = randomEmail;
-       return storeEmail;
+//    @Given("User do registration")
+//    public String userDoRegistration(DataTable dt) {
+////        String generatedString = RandomStringUtils.randomAlphabetic(4);
+////        String randomEmail = generatedString + "@gmail.com";
+//        registrationPage.doRegister(dt.cell(1, 0), dt.cell(1, 1), randomEmail, dt.cell(1, 3));
+//        System.out.println(randomEmail);
+//        String storeEmail = randomEmail;
+//       return storeEmail;
+//    }
 
-
-
+    @When("Userr do registration")
+    public void userrDoRegistration() throws IOException, ParseException {
+        jsonReader.JsonReader();
+        registrationPage.doRegister(jsonReader.firstName, jsonReader.lastName, jsonReader.email, jsonReader.password);
     }
 
 //    public  void getDataTable (DataTable dt) {

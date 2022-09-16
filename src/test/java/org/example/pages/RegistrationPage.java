@@ -88,13 +88,13 @@ public class RegistrationPage {
         soft.assertAll();
     }
 
-    public void doRegister(String fName, String lName, String email, String password, String confirmPassword) {
+    public void doRegister(String fName, String lName, String email, String password) {
 
         driver.findElement(firstNameTxtField).sendKeys(fName);
         driver.findElement(lastNameTxtField).sendKeys(lName);
         driver.findElement(emailTxtField).sendKeys(email);
         driver.findElement(passwordTxtField).sendKeys(password);
-        driver.findElement(confirmPasswordTxtField).sendKeys(confirmPassword);
+        driver.findElement(confirmPasswordTxtField).sendKeys(password);
         driver.findElement(registerBtn).click();
 
     }

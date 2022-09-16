@@ -24,12 +24,12 @@ public class LoginPage {
      * Actions
      */
 
-    public void doRegisterAndLogin(String fName, String lName, String email, String password, String confirmPassword) {
-        registrationPage.doRegister(fName, lName, email, password, confirmPassword);
-        registrationPage.doLogout();
-        enterLoginCredentials(email, password);
-        clickOnLoginBtn();
-    }
+//    public void doRegisterAndLogin(String fName, String lName, String email, String password, String confirmPassword) {
+//        registrationPage.doRegister(fName, lName, email, password);
+//        registrationPage.doLogout();
+//        enterLoginCredentials(email, password);
+//        clickOnLoginBtn();
+//    }
 
     public void enterLoginCredentials(String loginEmail, String loginPassword) {
         driver.findElement(loginEmailTxtField).sendKeys(loginEmail);
