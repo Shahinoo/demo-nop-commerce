@@ -41,11 +41,8 @@ public class LoginStepDef {
 
     @When("user login with valid email and password")
     public void userLoginWithValidEmailAndPassword() throws IOException, ParseException {
-        //  System.out.println(registerStepDef.randomEmail);
         jsonReader.JsonReader();
         loginPage.enterLoginCredentials(jsonReader.email, jsonReader.password);
-
-
     }
 
     @And("user press on login button")

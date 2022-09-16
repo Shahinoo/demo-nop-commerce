@@ -21,22 +21,6 @@ public class RegisterStepDef {
     RegistrationPage registrationPage = new RegistrationPage(driver);
     JsonDataReader jsonReader = new JsonDataReader();
 
-
-//
-//    String randomEmail = randomEmail();
-
-    public static String randomEmail() {
-        String generatedString = RandomStringUtils.randomAlphabetic(4);
-        String randomEmail = generatedString + "@gmail.com";
-        return randomEmail;
-    }
-
-
-
-//    public String getRandomEmail() {
-//        return randomEmail;
-//    }
-
     @Given("user go to register page")
     public void userGoToRegisterPage() {
         homePage.clickOnRegistrationLink();
@@ -85,38 +69,10 @@ public class RegisterStepDef {
 
     }
 
-//    @Given("User do registration")
-//    public String userDoRegistration(DataTable dt) {
-////        String generatedString = RandomStringUtils.randomAlphabetic(4);
-////        String randomEmail = generatedString + "@gmail.com";
-//        registrationPage.doRegister(dt.cell(1, 0), dt.cell(1, 1), randomEmail, dt.cell(1, 3));
-//        System.out.println(randomEmail);
-//        String storeEmail = randomEmail;
-//       return storeEmail;
-//    }
-
-    @When("Userr do registration")
-    public void userrDoRegistration() throws IOException, ParseException {
+    @When("User do registration")
+    public void userDoRegistration() throws IOException, ParseException {
         jsonReader.JsonReader();
         registrationPage.doRegister(jsonReader.firstName, jsonReader.lastName, jsonReader.email, jsonReader.password);
     }
 
-//    public  void getDataTable (DataTable dt) {
-//        userDoRegistration()
-//
-//    }
-
-//    public void getValueOfRandomEmail (String email) {
-//        String value = String.valueOf(email);
-//        System.out.println(value);
-//    }
-
-//    public String getStoreEmail() {
-//        return storeEmail;
-//    }
-
-//    public String getRandomEmail() {
-//
-//        return randomEmail;
-//    }
 }

@@ -3,10 +3,7 @@ Feature: NOP-02 Login | users could use Login functionality
 
   Background: User is already Registered before
     Given user go to register page
-#    When User do registration
-#      | fName | lName | email       | password | confirmPassword |
-#      | mush  | test  | RandomEmail | p@ssw0rd | p@ssw0rd        |
-    When Userr do registration
+    When User do registration
     Then Success message is displayed
     When user logout
     Then user on home page
