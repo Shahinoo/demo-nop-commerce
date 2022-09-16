@@ -49,9 +49,7 @@ public class RegisterStepDef {
         System.out.println(randomEmail);
         // Enter email
         registrationPage.enterEmail(randomEmail);
-        System.out.println(randomEmail);
     }
-
 
     @And("user fills Password fields {string} and {string}")
     public void userFillsPasswordFieldsAnd(String password, String confirmPassword) {

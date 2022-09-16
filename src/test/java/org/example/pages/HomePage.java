@@ -26,8 +26,10 @@ public class HomePage {
     public void clickOnLoginLink() {
         driver.findElement(loginLink).click();
     }
-    public void getHomePageURL () {
-        driver.getCurrentUrl();
+
+    public String getHomePageURL() {
+        System.out.println(driver.getCurrentUrl());
+        return driver.getCurrentUrl();
     }
 
 }

@@ -31,7 +31,7 @@ public class RegistrationPage {
     By registerBtn = By.id("register-button");
 
     /**
-     * Locators of Register Result page
+     * Locators of Register Result page to use it in assertions
      */
     By successRegisterMessage = By.cssSelector(".result");
     By logOutLink = By.cssSelector(".ico-logout");
@@ -98,7 +98,6 @@ public class RegistrationPage {
         driver.findElement(registerBtn).click();
 
     }
-
 
 
     public void doRegister(String email) {
