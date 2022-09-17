@@ -21,6 +21,8 @@ public class HomePage {
     By registerLink = By.cssSelector(".ico-register");
     By loginLink = By.linkText("Log in");
     By currencyDDL = By.id("customerCurrency");
+    By searchTextField = By.cssSelector("input#small-searchterms");
+    By searchBTN = By.cssSelector(".button-1.search-box-button");
 
 
     // Home page Functions
@@ -47,4 +49,14 @@ public class HomePage {
         List<WebElement> prices = driver.findElements(By.cssSelector(".actual-price.price"));
         return prices;
     }
+
+    public void clickOnSearchTextField() {
+        driver.findElement(searchTextField).click();
+    }
+
+    public void doSearch(String text) {
+        driver.findElement(searchTextField).sendKeys(text);
+        driver.findElement(searchBTN).click();
+    }
+
 }

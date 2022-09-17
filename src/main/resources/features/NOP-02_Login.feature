@@ -12,7 +12,7 @@ Feature: NOP-02 Login | users could use Login functionality
     And user press on login button
     Then user login to the system successfully
 
-  Scenario: user could login with valid email and password
+  Scenario: user could login with invalid email and password
     Given user go to login page
     When user login with invalid "wrong@gmail.com" and "P@ssw0rd"
     And user press on login button

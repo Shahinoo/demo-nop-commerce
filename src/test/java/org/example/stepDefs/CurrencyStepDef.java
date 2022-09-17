@@ -3,16 +3,11 @@ package org.example.stepDefs;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.HomePage;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
-import java.util.List;
 
 import static org.example.stepDefs.Hooks.driver;
 
-public class ChangeCurrency {
+public class CurrencyStepDef {
     HomePage homePage = new HomePage(driver);
 
     @When("user select Euro currency from currency dropdown list")
