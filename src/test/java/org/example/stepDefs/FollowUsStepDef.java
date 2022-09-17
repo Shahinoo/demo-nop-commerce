@@ -18,8 +18,8 @@ public class FollowUsStepDef {
     }
 
 
-    @Then("facebook page is opened on a new tab")
-    public void facebookPageIsOpenedOnANewTab() {
+    @Then("{string} facebook link is opened on a new tab")
+    public void facebookPageIsOpenedOnANewTab(String faceBookLink) {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // Verify before switch to facebook tab
         System.out.println(driver.getCurrentUrl());
@@ -27,7 +27,7 @@ public class FollowUsStepDef {
         // Verify after switch to facebook tab
         System.out.println(driver.getCurrentUrl());
         // Assert
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.facebook.com/nopCommerce");
+        Assert.assertEquals(driver.getCurrentUrl(),faceBookLink);
     }
 
     @When("user click on twitter link")
@@ -35,8 +35,8 @@ public class FollowUsStepDef {
         homePage.clickOnTwitterLink();
     }
 
-    @Then("twitter page is opened on a new tab")
-    public void twitterPageIsOpenedOnANewTab() throws InterruptedException {
+    @Then("{string} twitter link is opened on a new tab")
+    public void twitterPageIsOpenedOnANewTab(String twitterLink) throws InterruptedException {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // Verify before switch to twitter tab
         System.out.println(driver.getCurrentUrl());
@@ -44,7 +44,7 @@ public class FollowUsStepDef {
         // Verify after switch to twitter tab
         System.out.println(driver.getCurrentUrl());
         // Assert
-        Assert.assertEquals(driver.getCurrentUrl(), "https://twitter.com/nopCommerce");
+        Assert.assertEquals(driver.getCurrentUrl(), twitterLink);
     }
 
     @When("user click on RSS link")
@@ -52,8 +52,8 @@ public class FollowUsStepDef {
         homePage.clickOnRssLink();
     }
 
-    @Then("RSS page is opened on a new tab")
-    public void rssPageIsOpenedOnANewTab() {
+    @Then("{string} rss link is opened on a new tab")
+    public void rssPageIsOpenedOnANewTab(String rssLink) {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // Verify before switch to RSS tab
         System.out.println(driver.getCurrentUrl());
@@ -61,7 +61,7 @@ public class FollowUsStepDef {
         // Verify after switch to RSS tab
         System.out.println(driver.getCurrentUrl());
         // Assert
-        Assert.assertEquals(driver.getCurrentUrl(), "https://demo.nopcommerce.com/new-online-store-is-open");
+        Assert.assertEquals(driver.getCurrentUrl(), rssLink);
     }
 
     @When("user click on youTube link")
@@ -69,8 +69,8 @@ public class FollowUsStepDef {
         homePage.clickOnYoutubeLink();
     }
 
-    @Then("youTube page is opened on a new tab")
-    public void youtubePageIsOpenedOnANewTab() {
+    @Then("{string} youtube link is opened on a new tab")
+    public void youtubePageIsOpenedOnANewTab(String youtubeLink) {
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         // Verify before switch to YouTube tab
         System.out.println(driver.getCurrentUrl());
@@ -78,6 +78,6 @@ public class FollowUsStepDef {
         // Verify after switch to YouTube tab
         System.out.println(driver.getCurrentUrl());
         // Assert
-        Assert.assertEquals(driver.getCurrentUrl(), "https://www.youtube.com/user/nopCommerce");
+        Assert.assertEquals(driver.getCurrentUrl(), youtubeLink);
     }
 }
