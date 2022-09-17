@@ -1,3 +1,4 @@
+@smoke
 Feature: NOP-04 Search for product
 
   Scenario Outline: user could search using product name

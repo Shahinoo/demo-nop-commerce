@@ -1,3 +1,4 @@
+@smoke
 Feature: NOP-03 Change Currency
 
   Scenario: User could change the currency

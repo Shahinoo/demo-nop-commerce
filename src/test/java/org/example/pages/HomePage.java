@@ -23,6 +23,8 @@ public class HomePage {
     By currencyDDL = By.id("customerCurrency");
     By searchTextField = By.cssSelector("input#small-searchterms");
     By searchBTN = By.cssSelector(".button-1.search-box-button");
+    By iPhoneSlider = By.cssSelector("div#nivo-slider > a:nth-of-type(1)");
+    By nokiaSlider = By.cssSelector("div#nivo-slider > a:nth-of-type(2)");
 
 
     // Home page Functions
@@ -59,4 +61,11 @@ public class HomePage {
         driver.findElement(searchBTN).click();
     }
 
+    public void clickOniPhoneSlider() {
+        driver.findElement(iPhoneSlider).click();
+    }
+
+    public void clickOnNokiaSlider() {
+        driver.findElement(nokiaSlider).click();
+    }
 }
