@@ -25,7 +25,10 @@ public class HomePage {
     By searchBTN = By.cssSelector(".button-1.search-box-button");
     By iPhoneSlider = By.cssSelector("div#nivo-slider > a:nth-of-type(1)");
     By nokiaSlider = By.cssSelector("div#nivo-slider > a:nth-of-type(2)");
-
+    By faceBookLink = By.cssSelector(".facebook>a[target='_blank']");
+    By twitterLink = By.cssSelector(".twitter > a[target='_blank']");
+    By rssLink = By.linkText("RSS");
+    By youTubeLink = By.linkText("YouTube");
 
     // Home page Functions
     public void clickOnRegistrationLink() {
@@ -67,5 +70,21 @@ public class HomePage {
 
     public void clickOnNokiaSlider() {
         driver.findElement(nokiaSlider).click();
+    }
+
+    public void clickOnFaceBookLink() {
+        driver.findElement(faceBookLink).click();
+    }
+
+    public void clickOnTwitterLink() {
+        driver.findElement(twitterLink).click();
+    }
+
+    public void clickOnRssLink() {
+        driver.findElement(rssLink).click();
+    }
+
+    public void clickOnYoutubeLink() {
+        driver.findElement(youTubeLink).click();
     }
 }
