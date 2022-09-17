@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 
 import java.util.List;
 
-import static org.example.stepDefs.Hooks.driver;
-
 public class HomePage {
     WebDriver driver;
 
@@ -29,6 +27,9 @@ public class HomePage {
     By twitterLink = By.cssSelector(".twitter > a[target='_blank']");
     By rssLink = By.linkText("RSS");
     By youTubeLink = By.linkText("YouTube");
+    By wishlistBtnProduct = By.xpath("//div[3]/div[@class='product-item']//button[@title='Add to wishlist']");
+    By notificationBarSuccessMessage = By.cssSelector("p.content");
+    By wishlistLink = By.cssSelector(".ico-wishlist > .wishlist-label");
 
     // Home page Functions
     public void clickOnRegistrationLink() {
@@ -86,5 +87,23 @@ public class HomePage {
 
     public void clickOnYoutubeLink() {
         driver.findElement(youTubeLink).click();
+    }
+
+    public void clickOnWishlistBtnProduct() {
+        driver.findElement(wishlistBtnProduct).click();
+    }
+
+    public WebElement getNotificationBarSuccessMessage() {
+        return driver.findElement(notificationBarSuccessMessage);
+    }
+
+    public String getNotificationBackgroundColor() {
+        String backgroundColor = driver.findElement(By.cssSelector("div#bar-notification > .bar-notification.success")).getCssValue("background-color");
+        System.out.println(backgroundColor);
+        return backgroundColor;
+    }
+
+    public void clickOnWishlistLink () {
+        driver.findElement(wishlistLink).click();
     }
 }
