@@ -1,7 +1,154 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.878">
-    <testcase classname="F01_Register | users could register with new accounts" name="guest user could register with valid data successfully" time="5.674">
+<testsuite errors="0" failures="3" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="19" time="183.044">
+    <testcase classname="Register | users could register with new accounts" name="user could register with valid data successfully" time="12.696">
         <system-out><![CDATA[Given user go to register page..............................................passed
+When user select gender type male...........................................passed
+And user enter first name "Shah" and last name "tester".....................passed
+And user enter date of birth................................................passed
+And user enter email field..................................................passed
+And user fills Password fields "P@ssw0rdO" and "P@ssw0rdO"..................passed
+And user clicks on register button..........................................passed
+Then Success message is displayed...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-02 Login | users could use Login functionality" name="user could login with valid email and password" time="14.362">
+        <system-out><![CDATA[Given user go to register page..............................................passed
+When User do registration...................................................passed
+Then Success message is displayed...........................................passed
+When user logout............................................................passed
+Then user on home page......................................................passed
+When user go to login page..................................................passed
+And user login with valid email and password................................passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-02 Login | users could use Login functionality" name="user could login with invalid email and password" time="8.363">
+        <system-out><![CDATA[Given user go to login page.................................................passed
+When user login with invalid "wrong@gmail.com" and "P@ssw0rd"...............passed
+And user press on login button..............................................passed
+Then user could not login to the system.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-03 Change Currency" name="User could change the currency" time="7.687">
+        <system-out><![CDATA[When user select Euro currency from currency dropdown list..................passed
+Then euro symbol is shown in the displayed products.........................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-04 Search for product" name="user could search using product name" time="9.176">
+        <system-out><![CDATA[When user clicks on search field............................................passed
+And user search by "book"...................................................passed
+Then user will find "book" relative results.................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-04 Search for product" name="user could search using product name 2" time="7.487">
+        <system-out><![CDATA[When user clicks on search field............................................passed
+And user search by "laptop".................................................passed
+Then user will find "laptop" relative results...............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-04 Search for product" name="user could search using product name 3" time="7.493">
+        <system-out><![CDATA[When user clicks on search field............................................passed
+And user search by "nike"...................................................passed
+Then user will find "nike" relative results.................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-04 Search for product" name="user could search using sku" time="9.093">
+        <system-out><![CDATA[When user clicks on search field............................................passed
+And user search by "SCI_FAITH"..............................................passed
+Then user will find "SCI_FAITH" specific results............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-04 Search for product" name="user could search using sku 2" time="8.905">
+        <system-out><![CDATA[When user clicks on search field............................................passed
+And user search by "APPLE_CAM"..............................................passed
+Then user will find "APPLE_CAM" specific results............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-04 Search for product" name="user could search using sku 3" time="10.25">
+        <system-out><![CDATA[When user clicks on search field............................................passed
+And user search by "SF_PRO_11"..............................................passed
+Then user will find "SF_PRO_11" specific results............................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-05 Hover Menu" name="user could hover menu" time="7.74">
+        <system-out><![CDATA[When user hover and select random value.....................................passed
+Then title of random value is displayed.....................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-06 Home Sliders" name="iphone slider is clickable on home page" time="12.293">
+        <failure message="Expected condition failed: waiting for url to contain &quot;https://demo.nopcommerce.com/iphone-6&quot;. Current url: &quot;https://demo.nopcommerce.com/&quot; (tried for 5 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.4.0', revision: 'e5c75ed026a'&#10;System info: host: 'DESKTOP-KJHFSLI', ip: '192.168.1.3', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\muham\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53898}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53898/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: ae8a4f53fe7465e63c206bb8b733b3e7" type="org.openqa.selenium.TimeoutException"><![CDATA[When user click on iphone slider............................................passed
+Then iphone slider is clickable.............................................failed
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "https://demo.nopcommerce.com/iphone-6". Current url: "https://demo.nopcommerce.com/" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-KJHFSLI', ip: '192.168.1.3', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\muham\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53898}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53898/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: ae8a4f53fe7465e63c206bb8b733b3e7
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at org.example.stepDefs.HomeSliderStepDef.iphoneSliderIsClickable(HomeSliderStepDef.java:26)
+	at ✽.iphone slider is clickable(file:///C:/Users/muham/OneDrive/Desktop/Local/Selenium-Workspace/demo-nop-commerce/src/main/resources/features/NOP-06_HomeSliders.feature:6)
+]]></failure>
+    </testcase>
+    <testcase classname="NOP-06 Home Sliders" name="nokia slider is clickable on home page" time="15.542">
+        <failure message="Expected condition failed: waiting for url to contain &quot;https://demo.nopcommerce.com/nokia-lumia-1020&quot;. Current url: &quot;https://demo.nopcommerce.com/&quot; (tried for 5 second(s) with 500 milliseconds interval)&#10;Build info: version: '4.4.0', revision: 'e5c75ed026a'&#10;System info: host: 'DESKTOP-KJHFSLI', ip: '192.168.1.3', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\muham\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53924}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53924/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 63b003454f613ac348a996840bb9e95d" type="org.openqa.selenium.TimeoutException"><![CDATA[When user click on nokia slider.............................................passed
+Then nokia slider is clickable..............................................failed
+
+StackTrace:
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for url to contain "https://demo.nopcommerce.com/nokia-lumia-1020". Current url: "https://demo.nopcommerce.com/" (tried for 5 second(s) with 500 milliseconds interval)
+Build info: version: '4.4.0', revision: 'e5c75ed026a'
+System info: host: 'DESKTOP-KJHFSLI', ip: '192.168.1.3', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.3.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 105.0.5195.127, chrome: {chromedriverVersion: 105.0.5195.52 (412c95e51883..., userDataDir: C:\Users\muham\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53924}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53924/devtoo..., se:cdpVersion: 105.0.5195.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 63b003454f613ac348a996840bb9e95d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:87)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
+	at org.example.stepDefs.HomeSliderStepDef.nokiaSliderIsClickable(HomeSliderStepDef.java:40)
+	at ✽.nokia slider is clickable(file:///C:/Users/muham/OneDrive/Desktop/Local/Selenium-Workspace/demo-nop-commerce/src/main/resources/features/NOP-06_HomeSliders.feature:10)
+]]></failure>
+    </testcase>
+    <testcase classname="NOP-07 Follow us" name="user opens facebook page" time="7.448">
+        <system-out><![CDATA[When user click on facebook link............................................passed
+Then "https://www.facebook.com/nopCommerce" facebook link is opened on a new tab.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-07 Follow us" name="user opens twitter page" time="7.673">
+        <system-out><![CDATA[When user click on twitter link.............................................passed
+Then "https://twitter.com/nopCommerce" twitter link is opened on a new tab..passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-07 Follow us" name="user opens RSS page" time="6.641">
+        <failure message="Index 1 out of bounds for length 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[When user click on RSS link.................................................passed
+Then "https://demo.nopcommerce.com/new-online-store-is-open" rss link is opened on a new tab.failed
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index 1 out of bounds for length 1
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:359)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.example.stepDefs.FollowUsStepDef.rssPageIsOpenedOnANewTab(FollowUsStepDef.java:60)
+	at ✽."https://demo.nopcommerce.com/new-online-store-is-open" rss link is opened on a new tab(file:///C:/Users/muham/OneDrive/Desktop/Local/Selenium-Workspace/demo-nop-commerce/src/main/resources/features/NOP-07_FollowUs.feature:14)
+]]></failure>
+    </testcase>
+    <testcase classname="NOP-07 Follow us" name="user opens youTube page" time="9.485">
+        <system-out><![CDATA[When user click on youTube link.............................................passed
+Then "https://www.youtube.com/user/nopCommerce" youtube link is opened on a new tab.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-08 Add product to Wishlist" name="user could add a product to the wishlist" time="7.974">
+        <system-out><![CDATA[When user add product to wishlist from home page............................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+    </testcase>
+    <testcase classname="NOP-08 Add product to Wishlist" name="products are displayed in the wishlist page" time="12.201">
+        <system-out><![CDATA[When user add product to wishlist from home page............................passed
+And user open wishlist page.................................................passed
+Then product is displayed on wishlist.......................................passed
 ]]></system-out>
     </testcase>
 </testsuite>

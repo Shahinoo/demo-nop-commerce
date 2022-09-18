@@ -5,11 +5,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.pages.HomePage;
 import org.example.pages.SearchResultsPage;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
-import java.util.Locale;
 
 import static org.example.stepDefs.Hooks.driver;
 
