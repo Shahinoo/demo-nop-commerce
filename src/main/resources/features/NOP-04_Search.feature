@@ -7,7 +7,7 @@ Feature: NOP-04 Search for product
     Then user will find "<productName>" relative results
     Examples:
       | productName |
-      | book        |
+      | macbook        |
       | laptop      |
       | nike        |
 

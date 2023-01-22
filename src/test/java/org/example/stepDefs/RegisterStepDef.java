@@ -69,8 +69,16 @@ public class RegisterStepDef {
 
     @When("User do registration")
     public void userDoRegistration() throws IOException, ParseException {
+
+        // Random Email
+        String generatedString = RandomStringUtils.randomAlphabetic(6);
+        String randomEmail = generatedString + "@gmail.com";
+        // verify
+        System.out.println(randomEmail);
+        // Register with values from jsonReader and the generated random email
         jsonReader.JsonReader();
-        registrationPage.doRegister(jsonReader.firstName, jsonReader.lastName, jsonReader.email, jsonReader.password);
+        registrationPage.doRegister(jsonReader.firstName, jsonReader.lastName, randomEmail, jsonReader.password);
+
     }
 
 }
