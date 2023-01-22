@@ -18,7 +18,7 @@ public class HomePage {
 
     // Home page Locators
     By registerLink = By.cssSelector(".ico-register");
-    By loginLink = By.linkText("Log in");
+    By loginLink = By.className("ico-login");
     By currencyDDL = By.id("customerCurrency");
     By searchTextField = By.cssSelector("input#small-searchterms");
     By searchBTN = By.cssSelector(".button-1.search-box-button");

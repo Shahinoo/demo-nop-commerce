@@ -30,6 +30,11 @@ public class LoginPage {
     /**
      * Actions
      */
+
+    public String getLoginPageURL() {
+        System.out.println(driver.getCurrentUrl());
+        return driver.getCurrentUrl();
+    }
     public void enterLoginCredentials(String loginEmail, String loginPassword) {
         driver.findElement(loginEmailTxtField).sendKeys(loginEmail);
         driver.findElement(loginPasswordTxtField).sendKeys(loginPassword);

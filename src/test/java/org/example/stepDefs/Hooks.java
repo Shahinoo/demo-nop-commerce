@@ -5,6 +5,7 @@ import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import java.time.Duration;
 
@@ -20,8 +21,11 @@ public class Hooks {
     public static void OpenBrowser() {
         //1. using chrome driver
         WebDriverManager.chromedriver().setup();
+        //1.1. use headless from ChromeOptions Class
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless");
         //2. instantiate object from Chrome driver
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(chromeOptions);
         //3. configurations
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
