@@ -54,7 +54,7 @@ public class LoginStepDef {
     @Then("user login to the system successfully")
     public void userLoginToTheSystemSuccessfully() {
         // Assert on Current page after login
-        soft.assertEquals("https://demo.nopcommerce.com/", homePage.getHomePageURL());
+        soft.assertEquals(loginPage.getLoginPageURL(), "https://demo.nopcommerce.com/login?returnurl=%2F");
         // Assert on my Account tab
         soft.assertTrue(loginPage.getMyAccountWebEle().isDisplayed());
         soft.assertAll();
