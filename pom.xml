@@ -70,9 +70,9 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <projectName>Cucumber HTML Reports</projectName>
-                            <outputDirectory>target</outputDirectory>
-                            <inputDirectory>target</inputDirectory>
+                            <projectName>demo-nop-commerce</projectName>
+                            <outputDirectory>${project.build.directory}</outputDirectory>
+                            <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
                                 <param>**/cucumber*.json</param>
                             </jsonFiles>

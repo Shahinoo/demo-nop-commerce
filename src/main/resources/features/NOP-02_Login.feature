@@ -5,8 +5,6 @@ Feature: NOP-02 Login | users could use Login functionality
     Given user go to register page
     When User do registration
     Then Success message is displayed
-    When user logout
-    Then user on home page
     When user go to login page
     And user login with valid email and password
     And user press on login button

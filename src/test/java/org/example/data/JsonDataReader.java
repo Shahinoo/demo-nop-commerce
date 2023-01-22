@@ -19,14 +19,17 @@ public class JsonDataReader {
 
     public void JsonReader() throws JsonIOException, JsonSyntaxException, IOException, ParseException {
 
-        String filePath = System.getProperty("user.dir")+"/src/test/java/org/example/data/userData.json";
+        String filePath = System.getProperty("user.dir") + "/src/test/java/org";
         File srcFile = new File(filePath);
+        // change the path just for learn
+        String newPath = filePath.replace(srcFile.getName(), "org/example/data/userData.json");
+        File newFile = new File(newPath);
+        // use the new path
         JSONParser parser = new JSONParser();
-        JSONArray jsonArray =  (JSONArray) parser.parse(new FileReader(srcFile));
+        JSONArray jsonArray = (JSONArray) parser.parse(new FileReader(newFile));
 
-        for(Object jsonObj : jsonArray)
-        {
-            JSONObject person =  (JSONObject)jsonObj;
+        for (Object jsonObj : jsonArray) {
+            JSONObject person = (JSONObject) jsonObj;
             firstName = (String) person.get("firstname");
             lastName = (String) person.get("lastname");
             email = (String) person.get("email");
