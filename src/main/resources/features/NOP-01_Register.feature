@@ -1,4 +1,4 @@
-@smoke
+@smoke @build
 Feature: Register | users could register with new accounts
 
   Scenario: user could register with valid data successfully

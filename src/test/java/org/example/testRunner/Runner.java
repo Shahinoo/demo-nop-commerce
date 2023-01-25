@@ -7,14 +7,13 @@ import io.cucumber.testng.CucumberOptions;
         (
                 features = "src/main/resources/features",
                 glue = "org.example.stepDefs",
-                tags = "@smoke",
+                tags = "@build",
                 plugin = {"pretty",
                         "html:target/cucumber.html",
                         "json:target/cucumber.json",
                         "junit:target/cukes.xml",
                         "rerun:target/rerun.txt"
                 }
-
 
         )
 

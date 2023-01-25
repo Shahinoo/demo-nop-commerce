@@ -86,6 +86,7 @@ public class RegistrationPage {
         soft.assertEquals(colorString, "rgba(76, 177, 124, 1)");
         // Assert All
         soft.assertAll();
+
     }
 
     public void doRegister(String fName, String lName, String email, String password) {
